@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parin Hotel & Resort – Ganpatipule</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#0b0f14;
+--bg2:#11161c;
+--gold:#d4a017;
+--white:#f5f5f5;
+--grey:#9aa4af;
+--green:#25d366;
+}
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--white)}
+
+/* NAV */
+nav{
+position:fixed;width:100%;top:0;z-index:100;
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 40px;
+background:rgba(0,0,0,0.6);backdrop-filter:blur(6px)
+}
+.logo{
+font-family:'Playfair Display';font-weight:900;
+color:var(--gold);font-size:1.2rem
+}
+nav a{color:#ccc;text-decoration:none;margin:0 12px;font-size:0.9rem}
+
+/* HERO */
+#hero{
+height:100vh;display:flex;align-items:center;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+url('https://images.unsplash.com/photo-1501117716987-c8e1ecb210c1?w=1600') center/cover no-repeat;
+}
+
+.hero-content{padding:0 50px;max-width:650px}
+
+.hero-title{
+font-family:'Playfair Display';
+font-size:3.8rem;font-weight:900
+}
+.hero-title span{color:var(--gold)}
+
+.hero-sub{color:#ccc;margin:15px 0 25px;line-height:1.6}
+
+.rating{
+background:#111;padding:10px 18px;border-radius:50px;
+display:inline-block;margin-bottom:25px
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;border-radius:50px;
+text-decoration:none;font-weight:600;
+margin-right:10px
+}
+.btn-wa{background:var(--green);color:#fff}
+.btn-call{border:1px solid #ccc;color:#fff}
+
+/* TRUST */
+#trust{
+background:var(--gold);
+padding:15px;
+text-align:center;
+font-weight:600;
+color:#000
+}
+
+/* SECTION */
+section{padding:80px 40px}
+.container{max-width:1100px;margin:auto}
+
+/* ROOMS */
+.rooms{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px
+}
+.card{
+background:var(--bg2);
+border-radius:12px;overflow:hidden
+}
+.card img{width:100%;height:200px;object-fit:cover}
+.card-body{padding:18px}
+.price{color:var(--gold);font-size:1.4rem}
+
+/* CTA */
+#cta{
+text-align:center;
+background:linear-gradient(#000,#111);
+padding:100px 20px
+}
+#cta h2{font-size:2.5rem}
+#cta span{color:var(--gold)}
+
+footer{
+background:#000;padding:25px;text-align:center;
+color:#777;font-size:0.85rem
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Parin Resort</div>
+<div>
+<a href="#rooms">Rooms</a>
+<a href="#location">Location</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section id="hero">
+<div class="hero-content">
+<h1 class="hero-title">Parin Hotel <span>& Resort</span></h1>
+<p class="hero-sub">Luxury comfort meets peaceful coastal nature. Just minutes from Ganpatipule Beach.</p>
+
+<div class="rating">⭐ 4.8 Rating · 90+ Guests</div>
+
+<br>
+<a class="btn btn-wa" href="https://wa.me/918149721792">Book on WhatsApp</a>
+<a class="btn btn-call" href="tel:+918149721792">Call Now</a>
+</div>
+</section>
+
+<div id="trust">
+Premium Stay · AC Rooms · Pool · Free Parking · Near Beach
+</div>
+
+<section id="rooms">
+<div class="container">
+<h2 style="margin-bottom:30px;font-family:Playfair Display">Our Rooms</h2>
+
+<div class="rooms">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304">
+<div class="card-body">
+<h3>Deluxe Room</h3>
+<p>AC · WiFi · Comfortable Stay</p>
+<div class="price">₹2,800 / night</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39">
+<div class="card-body">
+<h3>Family Room</h3>
+<p>Spacious · 4 Guests · TV</p>
+<div class="price">₹3,400 / night</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1540518614846-7eded433c457">
+<div class="card-body">
+<h3>Standard Room</h3>
+<p>Budget Friendly · Clean</p>
+<div class="price">₹2,700 / night</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="location">
+<div class="container">
+<h2 style="margin-bottom:20px;font-family:Playfair Display">Location</h2>
+
+<p>Ganpatipule, Bhandarpule, Maharashtra 415615</p>
+<p>2 mins from Beach · Easy Access · Peaceful Surroundings</p>
+
+<iframe src="https://www.google.com/maps?q=Ganpatipule&output=embed" width="100%" height="300" style="border:0;margin-top:20px"></iframe>
+</div>
+</section>
+
+<section id="cta">
+<h2>Book Your Stay <span>Today</span></h2>
+<p style="margin:20px 0;color:#aaa">High demand on weekends. Instant booking via WhatsApp.</p>
+
+<a class="btn btn-wa" href="https://wa.me/918149721792">Book Now</a>
+</section>
+
+<footer>
+© 2026 Parin Hotel & Resort · Ganpatipule
+</footer>
+
+</body>
+</html>
