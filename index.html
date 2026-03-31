@@ -1,201 +1,629 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parin Hotel & Resort – Ganpatipule</title>
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Parin Hotel & Resort – Premium Stay in Ganpatipule | Pool · AC · Beach</title>
+<meta name="description" content="Parin Hotel & Resort in Ganpatipule offers AC rooms, swimming pool, warm hospitality & easy beach access. Rated 4.8 ★ by 91+ guests. Book your coastal getaway today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
-:root{
---bg:#0b0f14;
---bg2:#11161c;
---gold:#d4a017;
---white:#f5f5f5;
---grey:#9aa4af;
---green:#25d366;
-}
+  :root {
+    --bg: #0e0e0e;
+    --bg2: #161616;
+    --bg3: #1e1c19;
+    --white: #f5f0e8;
+    --accent: #e8890c;
+    --accent2: #f5a623;
+    --green: #25d366;
+    --grey: #a09880;
+    --card: #1c1a17;
+    --border: rgba(232,137,12,0.2);
+  }
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--white)}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* NAV */
-nav{
-position:fixed;width:100%;top:0;z-index:100;
-display:flex;justify-content:space-between;align-items:center;
-padding:18px 40px;
-background:rgba(0,0,0,0.6);backdrop-filter:blur(6px)
-}
-.logo{
-font-family:'Playfair Display';font-weight:900;
-color:var(--gold);font-size:1.2rem
-}
-nav a{color:#ccc;text-decoration:none;margin:0 12px;font-size:0.9rem}
+  html { scroll-behavior: smooth; }
 
-/* HERO */
-#hero{
-height:100vh;display:flex;align-items:center;
-background:
-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1501117716987-c8e1ecb210c1?w=1600') center/cover no-repeat;
-}
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
 
-.hero-content{padding:0 50px;max-width:650px}
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 40px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent);
+    backdrop-filter: blur(2px);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+  }
+  .nav-logo span { color: var(--white); font-weight: 400; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: rgba(245,240,232,0.75);
+    text-decoration: none; font-size: 0.88rem; font-weight: 500;
+    letter-spacing: 0.3px; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--green); color: #fff;
+    padding: 9px 20px; border-radius: 50px;
+    text-decoration: none; font-size: 0.85rem; font-weight: 600;
+    display: flex; align-items: center; gap: 7px; transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.88; }
 
-.hero-title{
-font-family:'Playfair Display';
-font-size:3.8rem;font-weight:900
-}
-.hero-title span{color:var(--gold)}
+  /* HERO */
+  #hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(14,10,4,0.7) 60%, rgba(232,137,12,0.12) 100%),
+      url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80') center/cover no-repeat;
+    transform: scale(1.03);
+    animation: slowZoom 18s ease-in-out infinite alternate;
+  }
+  @keyframes slowZoom {
+    from { transform: scale(1.03); }
+    to   { transform: scale(1.10); }
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.3;
+  }
 
-.hero-sub{color:#ccc;margin:15px 0 25px;line-height:1.6}
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 680px; padding: 0 48px;
+    animation: fadeUp 1s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(32px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
 
-.rating{
-background:#111;padding:10px 18px;border-radius:50px;
-display:inline-block;margin-bottom:25px
-}
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(232,137,12,0.15); border: 1px solid var(--border);
+    padding: 6px 16px; border-radius: 50px; margin-bottom: 24px;
+    font-size: 0.8rem; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase;
+  }
+  .hero-tag span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block; }
 
-.btn{
-display:inline-block;
-padding:14px 28px;border-radius:50px;
-text-decoration:none;font-weight:600;
-margin-right:10px
-}
-.btn-wa{background:var(--green);color:#fff}
-.btn-call{border:1px solid #ccc;color:#fff}
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    font-weight: 900; line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 14px;
+  }
+  .hero-title .highlight { color: var(--accent); display: block; font-size: 0.9em; letter-spacing: -0.5px;}
 
-/* TRUST */
-#trust{
-background:var(--gold);
-padding:15px;
-text-align:center;
-font-weight:600;
-color:#000
-}
+  .hero-sub {
+    font-size: 1.15rem; color: rgba(245,240,232,0.7);
+    font-weight: 300; margin-bottom: 22px; line-height: 1.6;
+  }
 
-/* SECTION */
-section{padding:80px 40px}
-.container{max-width:1100px;margin:auto}
+  .hero-rating {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 18px; border-radius: 50px; margin-bottom: 36px;
+    font-size: 0.92rem; color: var(--white);
+  }
+  .stars { color: var(--accent2); letter-spacing: 2px; }
 
-/* ROOMS */
-.rooms{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px
-}
-.card{
-background:var(--bg2);
-border-radius:12px;overflow:hidden
-}
-.card img{width:100%;height:200px;object-fit:cover}
-.card-body{padding:18px}
-.price{color:var(--gold);font-size:1.4rem}
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
-/* CTA */
-#cta{
-text-align:center;
-background:linear-gradient(#000,#111);
-padding:100px 20px
-}
-#cta h2{font-size:2.5rem}
-#cta span{color:var(--gold)}
+  .btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--green); color: #fff;
+    padding: 16px 30px; border-radius: 50px;
+    text-decoration: none; font-size: 1rem; font-weight: 600;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37,211,102,0.5); }
 
-footer{
-background:#000;padding:25px;text-align:center;
-color:#777;font-size:0.85rem
-}
+  .btn-call {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1.5px solid rgba(245,240,232,0.4); color: var(--white);
+    padding: 16px 28px; border-radius: 50px;
+    text-decoration: none; font-size: 1rem; font-weight: 500;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-call:hover { border-color: var(--accent); background: rgba(232,137,12,0.08); }
 
+  /* TRUST STRIP */
+  #trust {
+    background: linear-gradient(90deg, var(--accent) 0%, #c96d00 100%);
+    padding: 18px 40px;
+  }
+  .trust-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; gap: 32px; flex-wrap: wrap; justify-content: center;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.9rem; font-weight: 600; color: #fff;
+    white-space: nowrap;
+  }
+  .trust-item svg { width: 17px; height: 17px; }
+
+  /* SECTION SHARED */
+  section { padding: 90px 40px; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+    color: var(--white); margin-bottom: 14px;
+  }
+  .section-sub {
+    color: var(--grey); font-size: 1rem; max-width: 520px; line-height: 1.7;
+  }
+  .section-head { margin-bottom: 54px; }
+
+  /* ROOMS */
+  #rooms { background: var(--bg2); }
+  .rooms-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;
+  }
+  .room-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .room-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+
+  .room-img {
+    width: 100%; height: 220px; object-fit: cover;
+    display: block; filter: brightness(0.9);
+    transition: filter 0.3s;
+  }
+  .room-card:hover .room-img { filter: brightness(1); }
+
+  .room-info { padding: 22px 22px 26px; }
+  .room-type {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--accent); font-weight: 600; margin-bottom: 8px;
+  }
+  .room-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 14px;
+  }
+  .room-meta {
+    display: flex; gap: 16px; margin-bottom: 20px;
+  }
+  .room-meta span {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.84rem; color: var(--grey);
+  }
+  .room-price {
+    font-size: 1.5rem; font-weight: 700; color: var(--accent2);
+    margin-bottom: 20px;
+  }
+  .room-price small { font-size: 0.8rem; color: var(--grey); font-weight: 400; }
+
+  .btn-book {
+    display: block; text-align: center;
+    background: linear-gradient(135deg, var(--accent) 0%, #c96d00 100%);
+    color: #fff; padding: 13px 20px; border-radius: 10px;
+    text-decoration: none; font-weight: 600; font-size: 0.92rem;
+    transition: opacity 0.2s;
+  }
+  .btn-book:hover { opacity: 0.88; }
+
+  /* AMENITIES SECTION (NEW) */
+  .amenities-grid {
+    max-width: 1100px; margin: 40px auto 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 28px; text-align: center;
+  }
+  .amenity-card {
+    background: rgba(28,26,23,0.6);
+    backdrop-filter: blur(2px);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 22px 12px;
+    transition: all 0.2s;
+  }
+  .amenity-card:hover { border-color: var(--accent); background: #1f1c18; }
+  .amenity-icon { font-size: 2.2rem; margin-bottom: 12px; display: inline-block; }
+  .amenity-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 5px; }
+  .amenity-card p { font-size: 0.75rem; color: var(--grey); }
+
+  /* GALLERY */
+  #gallery { background: var(--bg); }
+  .gallery-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 220px 220px;
+    gap: 14px;
+  }
+  .gallery-item {
+    border-radius: 12px; overflow: hidden; position: relative;
+    cursor: pointer;
+  }
+  .gallery-item:first-child { grid-row: 1 / 3; }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s, filter 0.4s;
+    filter: brightness(0.88) saturate(0.9);
+  }
+  .gallery-item:hover img { transform: scale(1.06); filter: brightness(1) saturate(1.1); }
+  .gallery-item::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent 50%);
+  }
+
+  /* REVIEWS */
+  #reviews { background: var(--bg3); }
+  .reviews-header {
+    display: flex; align-items: flex-end; gap: 24px;
+    margin-bottom: 54px; flex-wrap: wrap;
+  }
+  .big-rating {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem; font-weight: 900; color: var(--accent);
+    line-height: 1;
+  }
+  .rating-detail { padding-bottom: 8px; }
+  .rating-stars { color: var(--accent2); font-size: 1.3rem; letter-spacing: 3px; margin-bottom: 4px; }
+  .rating-count { color: var(--grey); font-size: 0.9rem; }
+
+  .reviews-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;
+  }
+  .review-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 26px;
+  }
+  .review-stars { color: var(--accent2); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 14px; }
+  .review-text {
+    font-size: 0.97rem; color: rgba(245,240,232,0.8);
+    line-height: 1.7; margin-bottom: 20px; font-style: italic;
+  }
+  .review-author {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .review-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #8b4f00);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem; color: #fff;
+    flex-shrink: 0;
+  }
+  .review-name { font-weight: 600; font-size: 0.92rem; color: var(--white); }
+  .review-date { font-size: 0.78rem; color: var(--grey); }
+
+  /* LOCATION */
+  #location { background: var(--bg2); }
+  .location-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+  }
+  .location-map {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border);
+    height: 340px;
+  }
+  .location-map iframe { width: 100%; height: 100%; border: none; display: block; }
+  .loc-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .loc-icon {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: rgba(232,137,12,0.12); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 1.1rem;
+  }
+  .loc-text strong { display: block; font-size: 0.92rem; color: var(--white); font-weight: 600; margin-bottom: 2px; }
+  .loc-text span { font-size: 0.84rem; color: var(--grey); }
+
+  /* FINAL CTA */
+  #cta {
+    background: linear-gradient(135deg, #0e0e0e 0%, #1a1200 50%, #0e0e0e 100%);
+    text-align: center; padding: 100px 40px;
+    position: relative; overflow: hidden;
+  }
+  #cta::before {
+    content: '';
+    position: absolute; top: -60%; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,137,12,0.12) 0%, transparent 70%);
+  }
+  .cta-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+  .cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 900;
+    color: var(--white); margin-bottom: 14px;
+  }
+  .cta-title .gold { color: var(--accent); }
+  .cta-sub { color: var(--grey); font-size: 1rem; margin-bottom: 42px; line-height: 1.6; }
+  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .cta-phone {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1.5px solid rgba(245,240,232,0.3); color: var(--white);
+    padding: 16px 28px; border-radius: 50px;
+    text-decoration: none; font-size: 1rem; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .cta-phone:hover { border-color: var(--accent); background: rgba(232,137,12,0.08); }
+
+  /* FOOTER */
+  footer {
+    background: #080808;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 36px 40px;
+    display: flex; flex-wrap: wrap; gap: 24px;
+    align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--accent); font-weight: 700;
+  }
+  .footer-logo span { color: var(--grey); }
+  footer p { font-size: 0.8rem; color: var(--grey); }
+  .social-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--grey); text-decoration: none; font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+  .social-link:hover { color: var(--accent2); }
+
+  /* WHATSAPP FAB */
+  .wa-fab {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+    text-decoration: none;
+    animation: pulse 2.5s infinite;
+    transition: transform 0.2s;
+  }
+  .wa-fab:hover { transform: scale(1.1); }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
+    50%      { box-shadow: 0 8px 50px rgba(37,211,102,0.8); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 0 24px; }
+    section { padding: 70px 22px; }
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+    }
+    .gallery-item:first-child { grid-row: auto; }
+    .location-inner { grid-template-columns: 1fr; }
+    #trust { padding: 16px 20px; }
+    .trust-inner { gap: 16px; }
+    footer { flex-direction: column; text-align: center; }
+  }
 </style>
 </head>
-
 <body>
 
+<!-- NAVIGATION -->
 <nav>
-<div class="logo">Parin Resort</div>
-<div>
-<a href="#rooms">Rooms</a>
-<a href="#location">Location</a>
-<a href="#contact">Contact</a>
-</div>
+  <div class="nav-logo">Parin Hotel <span>& Resort</span></div>
+  <ul class="nav-links">
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a class="nav-cta" href="https://wa.me/918149721792?text=Hi%2C%20I%20want%20to%20book%20a%20room%20at%20Parin%20Hotel%20%26%20Resort" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Book on WhatsApp
+  </a>
 </nav>
 
+<!-- HERO SECTION -->
 <section id="hero">
-<div class="hero-content">
-<h1 class="hero-title">Parin Hotel <span>& Resort</span></h1>
-<p class="hero-sub">Luxury comfort meets peaceful coastal nature. Just minutes from Ganpatipule Beach.</p>
-
-<div class="rating">⭐ 4.8 Rating · 90+ Guests</div>
-
-<br>
-<a class="btn btn-wa" href="https://wa.me/918149721792">Book on WhatsApp</a>
-<a class="btn btn-call" href="tel:+918149721792">Call Now</a>
-</div>
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag"><span></span> परिण होटल एंड रिजॉर्ट • Ganpatipule</div>
+    <h1 class="hero-title">
+      Parin Hotel <span class="highlight">& Resort</span>
+    </h1>
+    <p class="hero-sub">Luxury meets serenity — AC rooms, swimming pool, lush gardens & warm Konkan hospitality. Just minutes from Ganpatipule Beach.</p>
+    <div class="hero-rating">
+      <span class="stars">★★★★★</span>
+      Rated <strong>4.8 / 5</strong>&nbsp; by 91+ Happy Guests
+    </div>
+    <div class="hero-btns">
+      <a class="btn-whatsapp" href="https://wa.me/918149721792?text=Hi%2C%20I%20want%20to%20book%20a%20room%20at%20Parin%20Hotel%20%26%20Resort" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book on WhatsApp
+      </a>
+      <a class="btn-call" href="tel:+918149721792">📞 Call Now</a>
+    </div>
+  </div>
 </section>
 
+<!-- TRUST STRIP (UPDATED) -->
 <div id="trust">
-Premium Stay · AC Rooms · Pool · Free Parking · Near Beach
+  <div class="trust-inner">
+    <div class="trust-item"><svg viewBox="0 0 20 20" fill="#fff"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Swimming Pool</div>
+    <div class="trust-item"><svg viewBox="0 0 20 20" fill="#fff"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> AC Rooms</div>
+    <div class="trust-item"><svg viewBox="0 0 20 20" fill="#fff"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Free WiFi</div>
+    <div class="trust-item"><svg viewBox="0 0 20 20" fill="#fff"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> 4.8 ★ Rating</div>
+    <div class="trust-item"><svg viewBox="0 0 20 20" fill="#fff"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Near Beach</div>
+  </div>
 </div>
 
+<!-- ROOMS SECTION -->
 <section id="rooms">
-<div class="container">
-<h2 style="margin-bottom:30px;font-family:Playfair Display">Our Rooms</h2>
-
-<div class="rooms">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304">
-<div class="card-body">
-<h3>Deluxe Room</h3>
-<p>AC · WiFi · Comfortable Stay</p>
-<div class="price">₹2,800 / night</div>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39">
-<div class="card-body">
-<h3>Family Room</h3>
-<p>Spacious · 4 Guests · TV</p>
-<div class="price">₹3,400 / night</div>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1540518614846-7eded433c457">
-<div class="card-body">
-<h3>Standard Room</h3>
-<p>Budget Friendly · Clean</p>
-<div class="price">₹2,700 / night</div>
-</div>
-</div>
-
-</div>
-</div>
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-head">
+      <p class="section-label">Comfort & Elegance</p>
+      <h2 class="section-title">Our Rooms</h2>
+      <p class="section-sub">Spacious, air-conditioned rooms with modern amenities. Perfect for families, couples, and solo travelers.</p>
+    </div>
+    <div class="rooms-grid">
+      <div class="room-card">
+        <img class="room-img" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=80" alt="Deluxe AC Room">
+        <div class="room-info">
+          <div class="room-type">Best Value</div>
+          <div class="room-name">Deluxe AC Room</div>
+          <div class="room-meta"><span>👥 2 Guests</span><span>🛏 King Bed</span><span>❄️ AC</span></div>
+          <div class="room-price">₹2,835 <small>/ night</small></div>
+          <a class="btn-book" href="https://wa.me/918149721792?text=Hi%2C%20I%20want%20to%20book%20Deluxe%20AC%20Room%20at%20Parin%20Hotel%20Resort" target="_blank">Book via WhatsApp</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img class="room-img" src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=700&q=80" alt="Family Suite">
+        <div class="room-info">
+          <div class="room-type">Family Favorite</div>
+          <div class="room-name">Family Suite</div>
+          <div class="room-meta"><span>👥 4-5 Guests</span><span>🛏 2 Beds</span><span>📺 TV + Pool view</span></div>
+          <div class="room-price">₹4,299 <small>/ night</small></div>
+          <a class="btn-book" href="https://wa.me/918149721792?text=Hi%2C%20Family%20Suite%20inquiry%20at%20Parin%20Resort" target="_blank">Book via WhatsApp</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img class="room-img" src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=700&q=80" alt="Premium Pool View">
+        <div class="room-info">
+          <div class="room-type">Premium</div>
+          <div class="room-name">Pool View Room</div>
+          <div class="room-meta"><span>👥 2 Guests</span><span>🛏 Double Bed</span><span>🌊 Pool Access</span></div>
+          <div class="room-price">₹3,699 <small>/ night</small></div>
+          <a class="btn-book" href="https://wa.me/918149721792?text=Pool%20View%20Room%20booking%20-%20Parin%20Hotel" target="_blank">Book via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- AMENITIES SECTION (NEW) -->
+<section id="amenities" style="background: var(--bg); padding-top: 0;">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-head">
+      <p class="section-label">Premium Facilities</p>
+      <h2 class="section-title">Unwind & Indulge</h2>
+      <p class="section-sub">Everything you need for a perfect coastal retreat.</p>
+    </div>
+    <div class="amenities-grid">
+      <div class="amenity-card"><div class="amenity-icon">🏊‍♂️</div><h4>Swimming Pool</h4><p>Refreshing dip & lounge</p></div>
+      <div class="amenity-card"><div class="amenity-icon">❄️</div><h4>Air Conditioned</h4><p>All rooms with AC</p></div>
+      <div class="amenity-card"><div class="amenity-icon">📶</div><h4>Free High-Speed WiFi</h4><p>Stay connected</p></div>
+      <div class="amenity-card"><div class="amenity-icon">🍳</div><h4>Breakfast Available</h4><p>Authentic Konkan cuisine</p></div>
+      <div class="amenity-card"><div class="amenity-icon">🚗</div><h4>Free Parking</h4><p>Private & secure</p></div>
+      <div class="amenity-card"><div class="amenity-icon">♿</div><h4>Accessible</h4><p>Friendly for all guests</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-head">
+      <p class="section-label">Visual Stories</p>
+      <h2 class="section-title">Moments at Parin</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=700&q=80" alt="Resort pool"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Modern room"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80" alt="Resort exterior"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80" alt="Garden area"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Beach nearby"></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS SECTION -->
+<section id="reviews">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="reviews-header">
+      <div class="big-rating">4.8</div>
+      <div class="rating-detail">
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">Based on 91+ reviews on Google</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Beautiful resort with a clean swimming pool. Rooms are spacious and AC works perfectly. Staff is courteous and the location is peaceful yet close to Ganpatipule beach. The complimentary breakfast was delicious!"</p><div class="review-author"><div class="review-avatar">AS</div><div><div class="review-name">Anjali S.</div><div class="review-date">Mumbai · March 2026</div></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Best hotel in Ganpatipule! We booked the Family Suite and loved the hospitality. The pool area is well maintained and the property is very close to the main temple. Highly recommended for families."</p><div class="review-author"><div class="review-avatar">RK</div><div><div class="review-name">Rahul K.</div><div class="review-date">Pune · February 2026</div></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Parin Resort exceeded expectations. The ambience is relaxing, rooms are spotless, and the beach is a short walk away. Great value for money. We’ll definitely come back!"</p><div class="review-author"><div class="review-avatar">NM</div><div><div class="review-name">Neha M.</div><div class="review-date">Nashik · January 2026</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION SECTION -->
 <section id="location">
-<div class="container">
-<h2 style="margin-bottom:20px;font-family:Playfair Display">Location</h2>
-
-<p>Ganpatipule, Bhandarpule, Maharashtra 415615</p>
-<p>2 mins from Beach · Easy Access · Peaceful Surroundings</p>
-
-<iframe src="https://www.google.com/maps?q=Ganpatipule&output=embed" width="100%" height="300" style="border:0;margin-top:20px"></iframe>
-</div>
+  <div class="location-inner">
+    <div class="location-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.45!2d73.2705!3d17.1508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be91f3c9bf5a0d9%3A0x5a8c6c4a3d1f2b7e!2sParin%20Hotel%20and%20Resort!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="location-detail">
+      <p class="section-label">Find Us</p>
+      <h2 class="section-title">Easy Access,<br>Peaceful Escape</h2>
+      <div class="loc-item"><div class="loc-icon">📍</div><div class="loc-text"><strong>Address</strong><span>Bhandarpule, Ganpatipule, Maharashtra 415615 (Near ST Stand)</span></div></div>
+      <div class="loc-item"><div class="loc-icon">🏖</div><div class="loc-text"><strong>2 mins from Ganpatipule Beach</strong><span>Coastal breeze & sunset walks</span></div></div>
+      <div class="loc-item"><div class="loc-icon">🛕</div><div class="loc-text"><strong>5 mins to Ganpatipule Temple</strong><span>Sacred Swayambhu Ganesh Temple</span></div></div>
+      <div class="loc-item"><div class="loc-icon">🚌</div><div class="loc-text"><strong>Adjacent to ST Bus Stand</strong><span>Super convenient for travellers</span></div></div>
+      <div class="loc-item"><div class="loc-icon">⏰</div><div class="loc-text"><strong>Check-in 12:00 PM | Check-out 9:30 AM</strong><span>Flexible early check-in on request</span></div></div>
+    </div>
+  </div>
 </section>
 
+<!-- FINAL CTA -->
 <section id="cta">
-<h2>Book Your Stay <span>Today</span></h2>
-<p style="margin:20px 0;color:#aaa">High demand on weekends. Instant booking via WhatsApp.</p>
-
-<a class="btn btn-wa" href="https://wa.me/918149721792">Book Now</a>
+  <div class="cta-inner">
+    <p class="section-label" style="text-align:center">Limited Rooms Available</p>
+    <h2 class="cta-title">Book Your Stay <br><span class="gold">Today</span></h2>
+    <p class="cta-sub">Experience the best resort in Ganpatipule. Contact us on WhatsApp for instant confirmation, best rates & special offers.</p>
+    <div class="cta-btns">
+      <a class="btn-whatsapp" href="https://wa.me/918149721792?text=Hi%2C%20I%20want%20to%20book%20a%20room%20at%20Parin%20Hotel%20%26%20Resort" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book on WhatsApp
+      </a>
+      <a class="cta-phone" href="tel:+918149721792">📞 +91 81497 21792</a>
+    </div>
+  </div>
 </section>
 
+<!-- FOOTER with Instagram -->
 <footer>
-© 2026 Parin Hotel & Resort · Ganpatipule
+  <div class="footer-logo">Parin Hotel <span>& Resort</span></div>
+  <p>Bhandarpule, Ganpatipule, Maharashtra 415615 | परिण होटल एंड रिजॉर्ट</p>
+  <div style="display: flex; gap: 20px;">
+    <a class="social-link" href="https://www.instagram.com/parinhotelandresort" target="_blank" rel="noopener">📸 Instagram</a>
+    <a class="social-link" href="https://wa.me/918149721792" target="_blank">💬 WhatsApp</a>
+  </div>
+  <p>© 2025 Parin Hotel & Resort. All rights reserved.</p>
 </footer>
+
+<!-- WhatsApp FAB -->
+<a class="wa-fab" href="https://wa.me/918149721792?text=Hi%2C%20I%20want%20to%20book%20a%20room%20at%20Parin%20Hotel%20%26%20Resort" target="_blank" title="Chat on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 </body>
 </html>
